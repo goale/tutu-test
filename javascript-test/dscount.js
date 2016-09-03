@@ -1,23 +1,14 @@
 'use strict';
 
 var dscount = function (word, s1, s2) {
-    var match = (s1 + s2).toLowerCase(),
-        count = 0,
-        index = 0;
-
     word = word.toLowerCase();
+    var index = word.indexOf((s1 + s2).toLowerCase());
 
-    while (index < word.length) {
-        index = word.indexOf(match, index);
-        if (index === -1) {
-            return count;
-        }
-
-        index++;
-        count++;
+    if (index === -1) {
+        return 0;
     }
 
-    return count;
+    return 1 + dscount(word.substr(index + 1), s1, s2);
 };
 
 // Для удобства можно использовать эти тесты:
