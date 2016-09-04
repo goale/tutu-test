@@ -1,30 +1,49 @@
 var checkSyntax = function (stmt) {
-    var brackets = {
-        '{' : '}',
-        '[' : ']',
-        '<' : '>',
-        '(' : ')',
-    };
+    var brackets = ['{', '}', '[', ']', '(', ')', '<', '>'];
 
     var openingBracketsStack = [];
-    // 1. use regex to delete all except brackets
-    stmt = stmt.replace(/([^\(\)<>\{\}\[\]]+)/g, '');
-    console.log(stmt);
-    // 2. check brackets, if bracket is opening, add it to a stack
-    for (var i = 0; i < stmt.length; i++) {
-        if (Object.keys(brackets).indexOf(stmt.charAt(i)) !== -1) {
-            openingBracketsStack.push(stmt.charAt(i));
-            console.log(openingBracketsStack);
-        } else {
-            if (openingBracketsStack.length === 0) {
-                return 1;
-            }
 
-            if (stmt.charAt(i) !== brackets[openingBracketsStack.pop()]) {
-                return 1;
+    for (var i = 0; i < stmt.length; i++) {
+        var bracketIndex = brackets.indexOf(stmt.charAt(i));
+        if (bracketIndex !== -1) {
+            // if index is even than bracket is opening
+            if (bracketIndex % 2 === 0) {
+                openingBracketsStack.push(stmt.charAt(i));
+            } else {
+                // closing bracket comes first
+                if (openingBracketsStack.length === 0) {
+                    return 1;
+                }
+
+                // opening bracket doesn't match
+                if (brackets[bracketIndex - 1] !== openingBracketsStack.pop()) {
+                    return 1;
+                }
             }
         }
     }
 
     return 0;
 };
+
+try {
+    test(checkSyntax, ['---(++++)----'], 0);
+    test(checkSyntax, [''], 0);
+    test(checkSyntax, ['before ( middle []) after '], 0);
+    test(checkSyntax, [') ('], 1);
+    test(checkSyntax, ['} {'], 1);
+    test(checkSyntax, ['<(   >)'], 1);
+    test(checkSyntax, ['(  [  <>  ()  ]  <>  )'], 0);
+    test(checkSyntax, ['   (      [)'], 1);
+
+    console.info("Congratulations! All tests success passed.");
+} catch(e) {
+    console.error(e);
+}
+
+
+// Простая функция тестирования
+function test(call, args, count, n) {
+    let r = (call.apply(n, args) === count);
+    if (!r) throw "Test failed!";
+}
