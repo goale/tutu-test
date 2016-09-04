@@ -1,19 +1,12 @@
 function drawRating(vote) {
-    if (vote >= 0 && vote <= 20) {
-        return '★☆☆☆☆';
+    var starsCount = Math.ceil(vote / 20),
+        result = [];
+
+    for (var i = 0; i < 5; i++) {
+        result.push(i < starsCount ? '★' : '☆');
     }
-    else if (vote > 20 && vote <= 40) {
-        return '★★☆☆☆';
-    }
-    else if (vote > 40 && vote <= 60) {
-        return '★★★☆☆';
-    }
-    else if (vote > 60 && vote <= 80) {
-        return '★★★★☆';
-    }
-    else if (vote > 80 && vote <= 100) {
-        return '★★★★★';
-    }
+
+    return result.join('');
 }
 
 // Проверка работы результата
