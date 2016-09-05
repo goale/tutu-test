@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .layout {
@@ -9,7 +11,12 @@
 }
 
 .layout__row {
+    width: 100%;
     display: flex;
+}
+
+.layout__row--justify {
+    justify-content: space-between;
 }
 
 .layout__col {
@@ -18,40 +25,113 @@
 
 .layout__col--side {
     width: 200px;
-    background: #ccc;
 }
 
 .layout__col--main {
-    background: #eee;
     width: 824px;
-    /*flex-grow: 1;*/
+}
+
+/** Header **/
+header {
+    padding-top: 40px;
+    margin-bottom: 60px;
+}
+
+.header__menu {
+    margin-left: 200px;
+    width: 824px;
+    padding: 25px 40px;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.header__menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
 }
 
 /** Form **/
 .main-form__body {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .main-form__field {
     width: 30%;
+    margin-bottom: 40px;
+}
+
+.main-form__field input {
+    margin-bottom: 4px;
 }
 
 .main-form__field--wide {
     width: 100%;
 }
 
-.main-form__field input[type="text"] {
+.input--wide {
     width: 100%;
 }
 
 .main-form__field label {
     display: block;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 7px;
+}
+
+.main-form__hint {
+    color: #aaa;
+    font-size: 0.7em;
 }
 
 .main-form__footer {
-    background: tomato;
+    background: #f2f2f2;
     display: flex;
     justify-content: space-between;
+}
+
+label.label--radio {
+    font-weight: normal;
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background: #8cb903;
+    color: white;
+    border-radius: 6px;
+}
+
+/** Utilities **/
+.text--purple {
+    color: #4900a4;
+}
+
+.text--green {
+    color: #14731b;
+}
+
+.text--blue {
+    color: #0e73d9;
+}
+
+.text--orange {
+    color: #dd4c00;
+}
+
+.text--black {
+    color: #333;
+}
+
+.text--red {
+    color: #b60700;
 }

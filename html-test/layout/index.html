@@ -11,12 +11,12 @@
                 <header>
                     <nav class="header__menu" role="navigation">
                         <ul>
-                            <li><a href="#">Личный кабинет</a></li>
-                            <li><a href="#">Раздел 1</a></li>
-                            <li><a href="#">Раздел 2</a></li>
-                            <li><a href="#">Раздел 3</a></li>
-                            <li><a href="#">Раздел 4</a></li>
-                            <li><a href="#">Раздел 5</a></li>
+                            <li><a class="header__menu__item text--purple" href="#">Личный кабинет</a></li>
+                            <li><a class="header__menu__item text--green" href="#">Раздел 1</a></li>
+                            <li><a class="header__menu__item text--blue" href="#">Раздел 2</a></li>
+                            <li><a class="header__menu__item text--orange" href="#">Раздел 3</a></li>
+                            <li><a class="header__menu__item text--black" href="#">Раздел 4</a></li>
+                            <li><a class="header__menu__item text--red" href="#">Раздел 5</a></li>
                         </ul>
                     </nav>
                 </header>
@@ -43,64 +43,71 @@
                             </div>
                             <h3 class="group-heading">Общая информация</h3>
                             <div class="main-form__body">
-                                <div class="main-form__field">
-                                    <label for="last_name">Фамилия</label>
-                                    <input type="text" id="last_name" name="last_name">
+                                <div class="layout__row layout__row--justify">
+                                    <div class="main-form__field">
+                                        <label for="last_name">Фамилия</label>
+                                        <input class="input--wide" type="text" id="last_name" name="last_name">
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="first_name">Имя</label>
+                                        <input class="input--wide" type="text" id="first_name" name="first_name">
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="middle_name">Отчество</label>
+                                        <input class="input--wide" type="text" id="middle_name" name="middle_name">
+                                    </div>
                                 </div>
-                                <div class="main-form__field">
-                                    <label for="first_name">Имя</label>
-                                    <input type="text" id="first_name" name="first_name">
+                                <div class="layout__row layout__row--justify">
+                                    <div class="main-form__field">
+                                        <label>Меняли фамилию?</label>
+                                        <input type="radio" name="name_changed" id="yes" value="yes">
+                                        <label class="label--radio" for="yes">Да</label>
+                                        <input type="radio" name="name_changed" value="no"  id="no" checked>
+                                        <label class="label--radio" for="no">Нет</label>
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label>Пол</label>
+                                        <input type="radio" name="sex" value="m" id="sex_m" checked>
+                                        <label class="label--radio" for="sex_m">Муж</label>
+                                        <input type="radio" name="sex" value="f" id="sex_f">
+                                        <label class="label--radio" for="sex_f">Жен</label>
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="status">Семейное положение</label>
+                                        <select class="input--wide" name="status" id="status">
+                                            <option value="single">Холост / Не замужем</option>
+                                            <option value="married">Женат / Замужем</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="main-form__field">
-                                    <label for="middle_name">Отчество</label>
-                                    <input type="text" id="middle_name" name="middle_name">
-                                </div>
-                                <div class="main-form__field">
-                                    <label>Меняли фамилию?</label>
-                                    <label>
-                                        <input type="radio" name="name_changed" value="yes">
-                                        Да
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="name_changed" value="no" checked>
-                                        Нет
-                                    </label>
-                                </div>
-                                <div class="main-form__field">
-                                    <label>Пол</label>
-                                    <label>
-                                        <input type="radio" name="sex" value="m" checked>
-                                        Муж
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="sex" value="f">
-                                        Жен
-                                    </label>
-                                </div>
-                                <div class="main-form__field">
-                                    <label for="status">Семейное положение</label>
-                                    <select name="status" id="status">
-                                        <option value="single">Холост / Не замужем</option>
-                                        <option value="married">Женат / Замужем</option>
-                                    </select>
-                                </div>
-                                <div class="main-form__field">
-                                    <label for="residence">Гражданство</label>
-                                    <select name="residence" id="residence">
-                                        <option value="ru">Российская Федерация</option>
-                                        <option value="other">Другое</option>
-                                    </select>
-                                </div>
-                                <div class="main-form__field">
-                                    <label for="status">Семейное положение</label>
-                                    <select name="status" id="status">
-                                        <option value="single">Холост / Не замужем</option>
-                                        <option value="married">Женат / Замужем</option>
-                                    </select>
+
+                                <div class="layout__row">
+                                    <div class="main-form__field">
+                                        <label for="residence">Гражданство</label>
+                                        <select class="input--wide" name="residence" id="residence">
+                                            <option value="ru">Российская Федерация</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label>Дата рождения</label>
+                                        <select name="birth_day">
+                                            <option value="1">01</option>
+                                            <option value="2">02</option>
+                                        </select>
+                                        <select name="birth_month">
+                                            <option value="6">июня</option>
+                                            <option value="12">декабря</option>
+                                        </select>
+                                        <select name="birth_year">
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="main-form__field main-form__field--wide">
                                     <label for="birth_place">Место рождения</label>
-                                    <input type="text" id="birth_place" name="birth_place">
+                                    <input class="input--wide" type="text" id="birth_place" name="birth_place">
                                     <span class="main-form__hint">Например, Россия, Комсомольск-на-Амуре</span>
                                 </div>
                             </div>
