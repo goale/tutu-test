@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="layout">
+            <div class="layout__row">
+                <header>
+                    <nav class="header__menu" role="navigation">
+                        <ul>
+                            <li><a href="#">Личный кабинет</a></li>
+                            <li><a href="#">Раздел 1</a></li>
+                            <li><a href="#">Раздел 2</a></li>
+                            <li><a href="#">Раздел 3</a></li>
+                            <li><a href="#">Раздел 4</a></li>
+                            <li><a href="#">Раздел 5</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <div class="layout__row">
+                <aside class="layout__col layout__col--side">
+                    <p>
+                        TutuRu - крупнейший сервис поиска,
+                        бронирования и покупки авиабилетов и ж/д билетов.
+                    </p>
+                </aside>
+                <main class="layout__col layout__col--main">
+                    <div class="main-form">
+                        <form action="">
+                            <div class="main-form__header">
+                                <h2>Заполните форму</h2>
+                                <div class="form-progress">
+                                    <span class="form-progress__step">1</span>
+                                    <span class="form-progress__step">2</span>
+                                    <span class="form-progress__step">3</span>
+                                    <span class="form-progress__step">4</span>
+                                    <span class="form-progress__step">5</span>
+                                </div>
+                            </div>
+                            <h3 class="group-heading">Общая информация</h3>
+                            <div class="main-form__body">
+                                <div class="main-form__field">
+                                    <label for="last_name">Фамилия</label>
+                                    <input type="text" id="last_name" name="last_name">
+                                </div>
+                                <div class="main-form__field">
+                                    <label for="first_name">Имя</label>
+                                    <input type="text" id="first_name" name="first_name">
+                                </div>
+                                <div class="main-form__field">
+                                    <label for="middle_name">Отчество</label>
+                                    <input type="text" id="middle_name" name="middle_name">
+                                </div>
+                                <div class="main-form__field">
+                                    <label>Меняли фамилию?</label>
+                                    <label>
+                                        <input type="radio" name="name_changed" value="yes">
+                                        Да
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="name_changed" value="no" checked>
+                                        Нет
+                                    </label>
+                                </div>
+                                <div class="main-form__field">
+                                    <label>Пол</label>
+                                    <label>
+                                        <input type="radio" name="sex" value="m" checked>
+                                        Муж
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="sex" value="f">
+                                        Жен
+                                    </label>
+                                </div>
+                                <div class="main-form__field">
+                                    <label for="status">Семейное положение</label>
+                                    <select name="status" id="status">
+                                        <option value="single">Холост / Не замужем</option>
+                                        <option value="married">Женат / Замужем</option>
+                                    </select>
+                                </div>
+                                <div class="main-form__field">
+                                    <label for="residence">Гражданство</label>
+                                    <select name="residence" id="residence">
+                                        <option value="ru">Российская Федерация</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                                <div class="main-form__field">
+                                    <label for="status">Семейное положение</label>
+                                    <select name="status" id="status">
+                                        <option value="single">Холост / Не замужем</option>
+                                        <option value="married">Женат / Замужем</option>
+                                    </select>
+                                </div>
+                                <div class="main-form__field main-form__field--wide">
+                                    <label for="birth_place">Место рождения</label>
+                                    <input type="text" id="birth_place" name="birth_place">
+                                    <span class="main-form__hint">Например, Россия, Комсомольск-на-Амуре</span>
+                                </div>
+                            </div>
+                            <div class="main-form__footer">
+                                <a href="#">Назад</a>
+                                <input type="submit" value="Далее">
+                            </div>
+
+
+                        </form>
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </body>
+</html>
