@@ -109,6 +109,27 @@ header {
     color: #999;
 }
 
+.group-heading {
+    position: relative;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: 25px;
+    overflow: hidden;
+    padding-right: 15px;
+}
+
+.group-heading:after {
+    content: "";
+    border-top: 1px solid #999;
+    height: 1px;
+    left: 150px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
 .main-form__body {
     display: flex;
     flex-wrap: wrap;
