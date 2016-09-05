@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="layout">
+            <div class="layout__row">
+                <header>
+                    <nav class="header__menu" role="navigation">
+                        <ul>
+                            <li><a class="header__menu__item text--purple" href="#">Личный кабинет</a></li>
+                            <li><a class="header__menu__item text--green" href="#">Раздел 1</a></li>
+                            <li><a class="header__menu__item text--blue" href="#">Раздел 2</a></li>
+                            <li><a class="header__menu__item text--orange" href="#">Раздел 3</a></li>
+                            <li><a class="header__menu__item text--black" href="#">Раздел 4</a></li>
+                            <li><a class="header__menu__item text--red" href="#">Раздел 5</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <div class="layout__row">
+                <aside class="layout__col layout__col--side">
+                    <p>
+                        &#9728;TutuRu - крупнейший сервис поиска,
+                        бронирования и покупки авиабилетов и ж/д билетов.
+                    </p>
+                    <p>
+                        Наша цель проста - делать наших клиентов счастливыми,
+                        а их путешествия незабываемыми.
+                        Любое путешествие начинается с поиска подходящих билетов
+                        и бронирования гостиниц. А мы делаем это качественно,
+                        обеспечивая самую лучшую поддержку благодаря
+                        собственному контакт-центру.
+                    </p>
+                </aside>
+                <main class="layout__col layout__col--main">
+                    <div class="main-form">
+                        <form action="">
+                            <div class="main-form__header">
+                                <h2>Заполните форму</h2>
+                                <div class="form-progress">
+                                    <span class="form-progress__step">1</span>
+                                    <span class="form-progress__step">2</span>
+                                    <span class="form-progress__step form-progress__step--active">3</span>
+                                    <span class="form-progress__step">4</span>
+                                    <span class="form-progress__step">5</span>
+                                </div>
+                            </div>
+                            <h4 class="group-heading">Общая информация</h4>
+                            <div class="main-form__body">
+                                <div class="layout__col layout__col--third">
+                                    <div class="main-form__field">
+                                        <label for="last_name">Фамилия</label>
+                                        <input class="input--wide" type="text" id="last_name" name="last_name">
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label>Меняли фамилию?</label>
+                                        <input type="radio" name="name_changed" id="yes" value="yes">
+                                        <label class="label--radio" for="yes">Да</label>
+                                        <input type="radio" name="name_changed" value="no"  id="no" checked>
+                                        <label class="label--radio" for="no">Нет</label>
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="residence">Гражданство</label>
+                                        <select class="input--wide" name="residence" id="residence">
+                                            <option value="ru">Российская Федерация</option>
+                                            <option value="other">Другое</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="layout__col layout__col--third">
+                                    <div class="main-form__field">
+                                        <label for="first_name">Имя</label>
+                                        <input class="input--wide" type="text" id="first_name" name="first_name">
+                                    </div>
+
+                                    <div class="main-form__field">
+                                        <label>Пол</label>
+                                        <input type="radio" name="sex" value="m" id="sex_m" checked>
+                                        <label class="label--radio" for="sex_m">Муж</label>
+                                        <input type="radio" name="sex" value="f" id="sex_f">
+                                        <label class="label--radio" for="sex_f">Жен</label>
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label>Дата рождения</label>
+                                        <select name="birth_day">
+                                            <option value="1">01</option>
+                                            <option value="2">02</option>
+                                        </select>
+                                        <select name="birth_month">
+                                            <option value="6">июня</option>
+                                            <option value="12">декабря</option>
+                                        </select>
+                                        <select name="birth_year">
+                                            <option value="1990">1990</option>
+                                            <option value="1991">1991</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="layout__col layout__col--third">
+                                    <div class="main-form__field">
+                                        <label for="middle_name">Отчество</label>
+                                        <input class="input--wide" type="text" id="middle_name" name="middle_name">
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="status">Семейное положение</label>
+                                        <select class="input--wide" name="status" id="status">
+                                            <option value="single">Холост / Не замужем</option>
+                                            <option value="married">Женат / Замужем</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="main-form__field main-form__field--wide">
+                                    <label for="birth_place">Место рождения</label>
+                                    <input class="input--wide" type="text" id="birth_place" name="birth_place">
+                                    <span class="main-form__hint">Например, Россия, Комсомольск-на-Амуре</span>
+                                </div>
+                            </div>
+                            <div class="main-form__footer">
+                                <a class="btn" href="#">&#10229; Назад</a>
+                                <input class="btn btn--green" type="submit" value="Далее &#10230;">
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+
+        </div>
+    </body>
+</html>
