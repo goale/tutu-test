@@ -24,8 +24,16 @@
             <div class="layout__row">
                 <aside class="layout__col layout__col--side">
                     <p>
-                        TutuRu - крупнейший сервис поиска,
+                        &#9728;TutuRu - крупнейший сервис поиска,
                         бронирования и покупки авиабилетов и ж/д билетов.
+                    </p>
+                    <p>
+                        Наша цель проста - делать наших клиентов счастливыми,
+                        а их путешествия незабываемыми.
+                        Любое путешествие начинается с поиска подходящих билетов
+                        и бронирования гостиниц. А мы делаем это качественно,
+                        обеспечивая самую лучшую поддержку благодаря
+                        собственному контакт-центру.
                     </p>
                 </aside>
                 <main class="layout__col layout__col--main">
@@ -41,23 +49,13 @@
                                     <span class="form-progress__step">5</span>
                                 </div>
                             </div>
-                            <h3 class="group-heading">Общая информация</h3>
+                            <h4 class="group-heading">Общая информация</h4>
                             <div class="main-form__body">
-                                <div class="layout__row layout__row--justify">
+                                <div class="layout__col layout__col--third">
                                     <div class="main-form__field">
                                         <label for="last_name">Фамилия</label>
                                         <input class="input--wide" type="text" id="last_name" name="last_name">
                                     </div>
-                                    <div class="main-form__field">
-                                        <label for="first_name">Имя</label>
-                                        <input class="input--wide" type="text" id="first_name" name="first_name">
-                                    </div>
-                                    <div class="main-form__field">
-                                        <label for="middle_name">Отчество</label>
-                                        <input class="input--wide" type="text" id="middle_name" name="middle_name">
-                                    </div>
-                                </div>
-                                <div class="layout__row layout__row--justify">
                                     <div class="main-form__field">
                                         <label>Меняли фамилию?</label>
                                         <input type="radio" name="name_changed" id="yes" value="yes">
@@ -66,28 +64,26 @@
                                         <label class="label--radio" for="no">Нет</label>
                                     </div>
                                     <div class="main-form__field">
-                                        <label>Пол</label>
-                                        <input type="radio" name="sex" value="m" id="sex_m" checked>
-                                        <label class="label--radio" for="sex_m">Муж</label>
-                                        <input type="radio" name="sex" value="f" id="sex_f">
-                                        <label class="label--radio" for="sex_f">Жен</label>
-                                    </div>
-                                    <div class="main-form__field">
-                                        <label for="status">Семейное положение</label>
-                                        <select class="input--wide" name="status" id="status">
-                                            <option value="single">Холост / Не замужем</option>
-                                            <option value="married">Женат / Замужем</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="layout__row">
-                                    <div class="main-form__field">
                                         <label for="residence">Гражданство</label>
                                         <select class="input--wide" name="residence" id="residence">
                                             <option value="ru">Российская Федерация</option>
                                             <option value="other">Другое</option>
                                         </select>
+                                    </div>
+
+                                </div>
+                                <div class="layout__col layout__col--third">
+                                    <div class="main-form__field">
+                                        <label for="first_name">Имя</label>
+                                        <input class="input--wide" type="text" id="first_name" name="first_name">
+                                    </div>
+
+                                    <div class="main-form__field">
+                                        <label>Пол</label>
+                                        <input type="radio" name="sex" value="m" id="sex_m" checked>
+                                        <label class="label--radio" for="sex_m">Муж</label>
+                                        <input type="radio" name="sex" value="f" id="sex_f">
+                                        <label class="label--radio" for="sex_f">Жен</label>
                                     </div>
                                     <div class="main-form__field">
                                         <label>Дата рождения</label>
@@ -102,6 +98,21 @@
                                         <select name="birth_year">
                                             <option value="1990">1990</option>
                                             <option value="1991">1991</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="layout__col layout__col--third">
+                                    <div class="main-form__field">
+                                        <label for="middle_name">Отчество</label>
+                                        <input class="input--wide" type="text" id="middle_name" name="middle_name">
+                                    </div>
+                                    <div class="main-form__field">
+                                        <label for="status">Семейное положение</label>
+                                        <select class="input--wide" name="status" id="status">
+                                            <option value="single">Холост / Не замужем</option>
+                                            <option value="married">Женат / Замужем</option>
                                         </select>
                                     </div>
                                 </div>

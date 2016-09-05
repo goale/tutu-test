@@ -5,6 +5,11 @@
     padding: 0;
 }
 
+p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
 .layout {
     width: 1024px;
     margin: 0 auto;
@@ -19,8 +24,8 @@
     justify-content: space-between;
 }
 
-.layout__col {
-
+.layout__col--third {
+    width: 30%;
 }
 
 .layout__col--side {
@@ -29,6 +34,7 @@
 
 .layout__col--main {
     width: 824px;
+    padding-left: 40px;
 }
 
 /** Header **/
@@ -38,8 +44,8 @@ header {
 }
 
 .header__menu {
-    margin-left: 200px;
-    width: 824px;
+    margin-left: 240px;
+    width: 784px;
     padding: 25px 40px;
     border-radius: 15px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
@@ -133,10 +139,10 @@ header {
 .main-form__body {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .main-form__field {
-    width: 30%;
     margin-bottom: 40px;
 }
 
