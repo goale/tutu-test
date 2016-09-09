@@ -5,6 +5,8 @@ let UsersCollection = Backbone.Collection.extend({
     url: 'http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&adress={addressObject}&description={lorem|32}',
     page: 1,
     perPage: 10,
+    sortField: '',
+    ascending: false,
 
     paginate() {
         if (this.page === 1) {
@@ -17,6 +19,29 @@ let UsersCollection = Backbone.Collection.extend({
     setPage(page) {
         this.page = page;
         this.trigger("reset", this, this.options);
+    },
+
+    sortCollection(field) {
+        this.sortField = field;
+        this.ascending = !this.ascending;
+
+        this.sort();
+    },
+
+    comparator(model, comparing) {
+        let sort = 0;
+
+        if (model.get(this.sortField) > comparing.get(this.sortField)) {
+            sort = 1;
+        } else {
+            sort = -1;
+        }
+
+        if (this.ascending) {
+            return sort;
+        }
+
+        return -sort;
     },
 
     setPerPage(perPage) {

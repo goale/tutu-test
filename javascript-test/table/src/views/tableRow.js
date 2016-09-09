@@ -1,8 +1,6 @@
 const TableRowView = Backbone.View.extend({
     tagName: 'tr',
 
-    template: _.template($('#table-row-template').html()),
-
     initialize(options) {
         this.options = options || {};
 

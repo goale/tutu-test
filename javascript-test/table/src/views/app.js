@@ -9,7 +9,7 @@ const AppView = Backbone.View.extend({
     initialize() {
         this.collection = new UsersCollection();
 
-        this.listenTo(this.collection, "reset", this.render, this);
+        this.listenTo(this.collection, "reset change sort", this.render, this);
 
         this.collection.fetch({
             reset: true,
