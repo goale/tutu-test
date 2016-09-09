@@ -1,9 +1,10 @@
 import UsersCollection from '../collections/users';
+import TableView from './table';
 import TableRowView from './tableRow';
 import Pager from './pager';
 
 const AppView = Backbone.View.extend({
-    el: '#users-table tbody',
+    el: '.users-data',
 
     initialize() {
         this.collection = new UsersCollection();
@@ -16,11 +17,31 @@ const AppView = Backbone.View.extend({
     },
 
     render() {
-        this.$el.empty();
-        _.each(this.collection.paginate(), (model) => {
-            this.$el.append(new TableRowView({ model: model }).render().el);
+        const table = new TableView({ columns: {
+            'id': {
+                'label': 'ID',
+                'sortable': true
+            },
+            'firstName': {
+                'label': 'First Name',
+                'sortable': true
+            },
+            'lastName': {
+                'label': 'Last Name',
+                'sortable': true
+            },
+            'email': {
+                'label': 'Email',
+                'sortable': true
+            },
+            'phone': {
+                'label': 'Phone',
+                'sortable': true
+            }
+        },
+            collection: this.collection
         });
-
+        this.$el.html(table.render().el);
         this.$el.append(new Pager({ collection: this.collection }).el);
     }
 });

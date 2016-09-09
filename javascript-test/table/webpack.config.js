@@ -3,7 +3,7 @@ module.exports = {
     output: {
         filename: "./dist/bundle.js"
     },
-    // devtool: "source-map",
+    devtool: "source-map",
     resolve: {
         modulesDirectories: ['node_modules'],
         extensions: ["", ".js"]
@@ -20,9 +20,9 @@ module.exports = {
                 }
             }
         ],
-        // preLoaders: [
-        //     { test: /\.js$/, loader: 'source-map-loader' }
-        // ]
+        preLoaders: [
+            { test: /\.js$/, loader: 'source-map-loader' }
+        ]
     },
 
     externals: {
