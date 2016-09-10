@@ -18,7 +18,7 @@ let UsersCollection = Backbone.Collection.extend({
 
     setPage(page) {
         this.page = page;
-        this.trigger("reset", this, this.options);
+        this.trigger("change", this, this.options);
     },
 
     sortCollection(field) {
@@ -47,7 +47,12 @@ let UsersCollection = Backbone.Collection.extend({
     setPerPage(perPage) {
         this.perPage = perPage;
         this.page = 1;
-        this.trigger("reset", this, this.options);
+        this.trigger("change", this, this.options);
+    },
+
+    select(model) {
+        this.selected = model;
+        this.trigger("change", this, this.options);
     }
 });
 

@@ -1,6 +1,6 @@
 import UsersCollection from '../collections/users';
 import TableView from './table';
-import TableRowView from './tableRow';
+import DetailView from './detail';
 import Pager from './pager';
 
 const AppView = Backbone.View.extend({
@@ -42,6 +42,7 @@ const AppView = Backbone.View.extend({
             collection: this.collection
         });
         this.$el.html(table.render().el);
+        this.$el.append(new DetailView({ collection: this.collection }).render().el);
         this.$el.append(new Pager({ collection: this.collection }).el);
     }
 });

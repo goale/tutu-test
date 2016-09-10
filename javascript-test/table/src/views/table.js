@@ -48,7 +48,12 @@ const TableView = Backbone.View.extend({
         const fields = Object.keys(this.options.columns);
 
         _.each(this.collection.paginate(), (model) => {
-            $body.append(new TableRowView({ model: model, columns: fields }).render().el);
+            $body.append(new TableRowView({
+                collection: this.collection,
+                model,
+                columns: fields,
+                clickable: ['id']
+            }).render().el);
         });
 
         return $body;

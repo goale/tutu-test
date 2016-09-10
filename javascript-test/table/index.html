@@ -30,6 +30,15 @@
                 <% }); %>
             </ul>
         </script>
+        <script id="detail-view-template" type="text/template">
+            Выбран пользователь <b><%= firstName %> <%= lastName %></b><br>
+            Описание:<br>
+            <textarea name="desc" cols="30" rows="10"><%= description %></textarea><br>
+            Адрес проживания: <b><%= adress.streetAddress %></b><br>
+            Город: <b><%= adress.city %></b><br>
+            Провинция/штат: <b><%= adress.state %></b><br>
+            Индекс: <b><%= adress.zip %></b><br>
+        </script>
     </head>
     <body>
         <h1>Data Table</h1>
