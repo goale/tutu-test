@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Data Table</title>
+        <script id="pager-template" type="text/template">
+            <ul class="pager">
+                <% if (pages > 1) { %>
+                    <% _(pages).times(function (n) { %>
+                        <li>
+                            <% if (n + 1 === currentPage) { %>
+                                <span><%= n + 1 %></span>
+                            <% } else {%>
+                                <a href="#" class="pager__item" data-page="<%= n + 1 %>">
+                                    <%= n + 1 %>
+                                </a>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                <% } %>
+            </ul>
+            <ul class="pager-count">
+                <% _.each(perPageOptions, function(option) { %>
+                    <li>
+                        <% if (option === perPage) { %>
+                            <span><%= option %></span>
+                        <% } else { %>
+                            <a href="#" class="pager-count__item"><%= option %></a>
+                        <% } %>
+                    </li>
+                <% }); %>
+            </ul>
+        </script>
+        <script id="detail-view-template" type="text/template">
+            Выбран пользователь <b><%= firstName %> <%= lastName %></b><br>
+            Описание:<br>
+            <textarea name="desc" cols="30" rows="10"><%= description %></textarea><br>
+            Адрес проживания: <b><%= adress.streetAddress %></b><br>
+            Город: <b><%= adress.city %></b><br>
+            Провинция/штат: <b><%= adress.state %></b><br>
+            Индекс: <b><%= adress.zip %></b><br>
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="#!/small">Small Data</a></li>
+                        <li><a href="#!/large">Large Data</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div id="app"></div>
+        </div>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/underscore/underscore-min.js"></script>
+        <script src="node_modules/backbone/backbone-min.js"></script>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
