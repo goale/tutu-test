@@ -2,6 +2,8 @@ import TableRowView from './tableRow';
 
 const TableView = Backbone.View.extend({
     tagName: 'table',
+    sortField: '',
+    ascending: false,
 
     events: {
         'click .sortable': 'sortByField'
@@ -60,9 +62,31 @@ const TableView = Backbone.View.extend({
     sortByField(e) {
         e.preventDefault();
 
-        const $field = $(e.currentTarget).data('field');
+        this.sortField = $(e.currentTarget).data('field');
 
-        this.collection.sortCollection($field);
+        this.ascending = !this.ascending;
+
+        this.collection.comparator = this.comparator(this.sortField, this.ascending);
+
+        this.collection.sort();
+    },
+
+    comparator(field, ascending) {
+        return (model, comparing) => {
+            let sort = 0;
+
+            if (model.get(field) > comparing.get(field)) {
+                sort = 1;
+            } else {
+                sort = -1;
+            }
+
+            if (ascending) {
+                return sort;
+            }
+
+            return -sort;
+        };
     }
 });
 
