@@ -56,3 +56,18 @@ td {
 .pager li {
     padding: 6px;
 }
+
+.sortable {
+    color: #333;
+    text-decoration: none;
+}
+
+.sortable.asc:after {
+    content: "▲";
+    margin-left: 5px;
+}
+
+.sortable.desc:after {
+    content: "▼";
+    margin-left: 5px;
+}

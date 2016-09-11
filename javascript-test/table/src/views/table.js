@@ -27,21 +27,36 @@ const TableView = Backbone.View.extend({
         return this;
     },
 
+    /**
+     * Create table header based on provided set of columns
+     */
     createHeader() {
         var $header = $('<thead><tr></tr></thead>');
         _.each(this.options.columns, (column, key) => {
-            if (column.sortable) {
-                $header.append(`<th><a href="#" class="sortable" data-field="${key}">${column.label}</a></th>`);
-            } else {
-                $header.append(`<th>${column.label}</th>`);
-            }
+            $header.append(this.createHeaderItem(key, column));
         });
-
-        // TODO: add sortable classes
 
         return $header;
     },
 
+    /**
+     * Build table header item
+     */
+    createHeaderItem(field, options) {
+        if (options.sortable) {
+            let itemStyles = ['sortable'];
+            if (this.sortField === field) {
+                itemStyles.push(this.ascending ? 'asc' : 'desc');
+            }
+            return `<th><a href="#" class="${itemStyles.join(' ')}" data-field="${field}">${options.label}</a></th>`;
+        }
+
+        return `<th>${options.label}</th>`;
+    },
+
+    /**
+     * Table body with fetched data
+     */
     populate() {
         var $body = $('<tbody></tbody>');
 
@@ -71,6 +86,9 @@ const TableView = Backbone.View.extend({
         this.collection.sort();
     },
 
+    /**
+     * Sort by string values function
+     */
     comparator(field, ascending) {
         return (model, comparing) => {
             let sort = 0;
