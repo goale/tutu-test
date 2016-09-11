@@ -8,22 +8,23 @@ const Pager = Backbone.View.extend({
     },
 
     initialize() {
-        this.pageData = {
+        this.listenTo(this.collection, "change reset sort", this.render, this);
+    },
+
+    render() {
+        this.$el.html(this.template(this.getPagerData()));
+
+        return this;
+    },
+
+    getPagerData() {
+        return {
             perPage: this.collection.perPage,
             pages: Math.ceil(this.collection.length / this.collection.perPage),
             currentPage: this.collection.page,
             perPageOptions: [10, 50],
         };
-
-        this.render();
     },
-
-    render() {
-        this.$el.append(this.template(this.pageData));
-
-        return this;
-    },
-
 
 
     changePage(e) {

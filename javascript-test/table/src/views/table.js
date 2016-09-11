@@ -10,19 +10,17 @@ const TableView = Backbone.View.extend({
     initialize(options) {
         this.options = options || {};
 
+        this.listenTo(this.collection, 'reset change sort', this.render, this);
+
         if (typeof this.options.columns === 'undefined') {
             throw new Error('You should provide columns array');
         }
     },
 
     render() {
-        let $table = this.createHeader();
-        $table.insertAfter(this.populate());
-
-        this.$el
+        this.$el.html('')
             .append(this.createHeader())
             .append(this.populate());
-
 
         return this;
     },
@@ -47,7 +45,7 @@ const TableView = Backbone.View.extend({
 
         const fields = Object.keys(this.options.columns);
 
-        _.each(this.collection.paginate(), (model) => {
+        _.each(this.collection.data(), (model) => {
             $body.append(new TableRowView({
                 collection: this.collection,
                 model,

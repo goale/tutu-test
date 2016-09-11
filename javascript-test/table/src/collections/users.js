@@ -16,6 +16,10 @@ let UsersCollection = Backbone.Collection.extend({
         return _.first(this.rest(this.perPage * (this.page - 1)), this.perPage);
     },
 
+    data() {
+        return this.paginate();
+    },
+
     setPage(page) {
         this.page = page;
         this.trigger("change", this, this.options);

@@ -1,6 +1,7 @@
 import UsersCollection from '../collections/users';
 import TableView from './table';
 import DetailView from './detail';
+import FilterView from './filter';
 import Pager from './pager';
 
 const AppView = Backbone.View.extend({
@@ -9,11 +10,11 @@ const AppView = Backbone.View.extend({
     initialize() {
         this.collection = new UsersCollection();
 
-        this.listenTo(this.collection, "reset change sort", this.render, this);
-
         this.collection.fetch({
             reset: true,
         });
+
+        this.render();
     },
 
     render() {
@@ -42,6 +43,7 @@ const AppView = Backbone.View.extend({
             collection: this.collection
         });
         this.$el.html(table.render().el);
+        this.$el.append(new FilterView({ collection: this.collection }).render().el);
         this.$el.append(new DetailView({ collection: this.collection }).render().el);
         this.$el.append(new Pager({ collection: this.collection }).el);
     }
