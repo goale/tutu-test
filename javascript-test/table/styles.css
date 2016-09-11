@@ -78,3 +78,8 @@ td {
     content: "▼";
     margin-left: 5px;
 }
+
+.info {
+    text-align: center;
+    color: #ccc;
+}

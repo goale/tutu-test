@@ -60,7 +60,14 @@ const TableView = Backbone.View.extend({
      * Table body with fetched data
      */
     populate() {
-        var $body = $('<tbody></tbody>');
+        const data = this.collection.data();
+
+        if (data.length === 0) {
+            return $(`<p class="info">Нет записей</p>`);
+        }
+
+
+        let $body = $('<tbody></tbody>');
 
         const fields = Object.keys(this.options.columns);
 
