@@ -7,7 +7,7 @@ const DetailView = Backbone.View.extend({
     },
 
     render() {
-        if (typeof this.collection.selected !== 'undefined') {
+        if (this.collection.selected !== null) {
             this.$el.html(this.template(this.collection.selected.toJSON()));
         }
 

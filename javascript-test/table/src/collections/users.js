@@ -6,9 +6,12 @@ let UsersCollection = Backbone.Collection.extend({
     page: 1,
     perPage: 10,
     fetched: false,
+    selected: null,
 
     initialize(model, options) {
-        this.url = options.url || this.url
+        if (typeof options !== 'undefined') {
+            this.url = options.url || this.url;
+        }
     },
 
     paginate() {

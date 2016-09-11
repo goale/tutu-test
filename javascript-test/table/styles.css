@@ -13,6 +13,13 @@
 
 .table-filter {
     float: right;
+    margin-bottom: 20px;
+}
+
+.table-filter:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 table {

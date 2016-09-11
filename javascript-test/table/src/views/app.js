@@ -4,31 +4,37 @@ import DetailView from './detail';
 import Pager from './pager';
 
 const AppView = Backbone.View.extend({
-    el: '.users-data',
+    el: '#app',
 
     initialize() {
 
         this.collection.fetch({
             success: () => {
-                this.collection.fetched = true;
                 this.render();
+            },
+            error: () => {
+                this.onError();
             },
             reset: true,
         });
 
-        this.render();
+        this.onLoading();
     },
 
     render() {
         const collection = this.collection;
 
-        if (collection.fetched) {
-            this.$el.html(new ListView({ collection }).render().el)
-                .after(new DetailView({ collection }).render().el)
-                .after(new Pager({ collection }).render().el);
-        } else {
-            this.$el.html('<h1>Loading...</h1>');
-        }
+        this.$el.html(new ListView({ collection }).render().el)
+            .append(new Pager({ collection }).render().el)
+            .append(new DetailView({ collection }).render().el);
+    },
+
+    onLoading() {
+        this.$el.html('<h1>Loading...</h1>');
+    },
+
+    onError() {
+        this.$el.html('<h1>Error Occured</h1>');
     }
 });
 

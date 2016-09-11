@@ -1,7 +1,7 @@
 import TableRowView from './tableRow';
 
 const TableView = Backbone.View.extend({
-    tagName: 'table',
+    className: 'users-table',
     sortField: '',
     ascending: false,
 
@@ -20,9 +20,11 @@ const TableView = Backbone.View.extend({
     },
 
     render() {
-        this.$el.html('')
+        let $table = $('<table />')
             .append(this.createHeader())
             .append(this.populate());
+
+        this.$el.html($table);
 
         return this;
     },
