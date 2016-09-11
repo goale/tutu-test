@@ -45,7 +45,7 @@ const TableView = Backbone.View.extend({
 
         const fields = Object.keys(this.options.columns);
 
-        _.each(this.collection.data(), (model) => {
+        this.collection.each((model) => {
             $body.append(new TableRowView({
                 collection: this.collection,
                 model,

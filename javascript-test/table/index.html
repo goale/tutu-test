@@ -6,17 +6,19 @@
         <title>Data Table</title>
         <script id="pager-template" type="text/template">
             <ul class="pager">
-                <% _(pages).times(function (n) { %>
-                    <li>
-                        <% if (n + 1 === currentPage) { %>
-                            <span><%= n + 1 %></span>
-                        <% } else {%>
-                            <a href="#" class="pager__item" data-page="<%= n + 1 %>">
-                                <%= n + 1 %>
-                            </a>
-                        <% } %>
-                    </li>
-                <% }); %>
+                <% if (pages > 1) { %>
+                    <% _(pages).times(function (n) { %>
+                        <li>
+                            <% if (n + 1 === currentPage) { %>
+                                <span><%= n + 1 %></span>
+                            <% } else {%>
+                                <a href="#" class="pager__item" data-page="<%= n + 1 %>">
+                                    <%= n + 1 %>
+                                </a>
+                            <% } %>
+                        </li>
+                    <% }); %>
+                <% } %>
             </ul>
             <ul class="pager-count">
                 <% _.each(perPageOptions, function(option) { %>
