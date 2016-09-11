@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.users-data {
+}
+
+.table-filter {
+    float: right;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #eee;
+}
+
+td, th {
+    padding: 12px 3px;
+}
+
+td {
+    border-top: 1px solid #ccc;
+}
+
+.user-detail {
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.pager {
+    text-align: center;
+    padding: 16px;
+}
+
+.pager ul, .pager li {
+    list-style: none;
+    display: inline-block;
+}
+
+.pager ul {
+    padding: 0;
+    margin: 0 12px;
+}
+
+.pager li {
+    padding: 6px;
+}

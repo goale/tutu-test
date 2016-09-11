@@ -7,6 +7,11 @@ let UsersCollection = Backbone.Collection.extend({
     perPage: 10,
     sortField: '',
     ascending: false,
+    fetched: false,
+
+    initialize(model, options) {
+        this.url = options.url || this.url
+    },
 
     paginate() {
         if (this.page === 1) {

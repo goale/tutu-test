@@ -1,5 +1,5 @@
 const DetailView = Backbone.View.extend({
-    className: 'user-detail',
+    className: 'user-detail column',
     template: _.template($('#detail-view-template').html()),
 
     initialize() {

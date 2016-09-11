@@ -50,6 +50,9 @@ const TableRowView = Backbone.View.extend({
     showInfo(e) {
         e.preventDefault();
         this.collection.select(this.model);
+        $('html, body').animate({
+            scrollTop: $('.user-detail').offset().top
+        }, 500);
     }
 });
 

@@ -1,5 +1,5 @@
 const Pager = Backbone.View.extend({
-    tagName: 'div',
+    className: 'pager',
     template: _.template($('#pager-template').html()),
 
     events: {

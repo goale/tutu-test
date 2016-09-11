@@ -1,5 +1,6 @@
-import AppView from './views/app';
+import Router from './router';
 
 $(document).ready(() => {
-    new AppView();
+    new Router();
+    Backbone.history.start();
 });
