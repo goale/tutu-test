@@ -1,6 +1,4 @@
 function Pancake() {
-    this.flipped = false;
-    this.roasted = false;
 };
 
 function Pan() {
@@ -19,6 +17,17 @@ Pan.prototype.flip = function () {
     this.pancake = null;
 }
 
+/**
+ * Использование:
+ * var roaster = PancakeRoaster();
+ * Добавляем сковородки (каждый вызов метода добавляет одну сковороду)
+ * roaster.addPan();
+ * Добавляем блины
+ * roaster.addPancake();
+ * Жарим
+ * roaster.roast();
+ * Метод жарки возвращает количество итераций
+ */
 var PancakeRoaster = function () {
     var pans = [],
         pancakes = [];
